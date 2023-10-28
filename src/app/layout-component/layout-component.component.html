@@ -1,0 +1,38 @@
+<div class="contenedor-Menu">
+  <mat-toolbar class="barra-Menu color-menu-green">
+    <mat-toolbar-row>
+      <button (click)="toggleMenu()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img src="assets/Logo.png" alt="Logo" srcset="" width="40" height="40" />
+      <span>Sistema de telemetria ASB Bombeo</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container class="contenido-menu">
+    <mat-sidenav
+      style="min-width: 300px"
+      #cajon
+      mode="side"
+      [opened]="menuAbierto"
+    >
+      <mat-nav-list>
+        <a
+          mat-list-item
+          [routerLink]="['/asb/home']"
+          [hidden]="currentRoute.includes('/asb/home')"
+          (click)="toggleMenu()"
+        >
+          <mat-icon color="accent">home</mat-icon>
+          Home
+        </a>
+        <a mat-list-item (click)="logout()">
+          <mat-icon color="primary">arrow_forward_ios</mat-icon>
+          Cerrar sesión
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="padding-Menu-10">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

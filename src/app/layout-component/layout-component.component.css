@@ -1,0 +1,22 @@
+.contenedor-Menu {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.barra-Menu {
+  flex: 0 1 auto;
+}
+
+.contenido-menu {
+  flex: 1 1 auto;
+}
+
+.padding-Menu-10 {
+  padding: 10px;
+}
+
+.color-menu-green {
+  background-color: #114b11;
+  color: #FFFFFF;
+}
